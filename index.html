@@ -178,9 +178,9 @@
           >
         </div>
       </li>
-      <li><a href="#coffees">Coffees</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#coffees" onclick="closeSidenav()">Coffees</a></li>
+      <li><a href="#about" onclick="closeSidenav()">About Us</a></li>
+      <li><a href="#contact" onclick="closeSidenav()">Contact Us</a></li>
     </ul>
 
     <!-- Slider -->
@@ -718,25 +718,35 @@
           Contact Us
         </h2>
         <div class="row" style="margin-bottom: 0">
-          <div class="col s6 contact-form">
+          <div class="col s6 contact-form" style="background-color: #d4b99e">
             <form>
               <!-- form content -->
               <div class="input-field">
-                <input type="text" id="name" required style="color: white" />
-                <label for="name" style="color: white">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  style="color: rgb(0, 0, 0)"
+                />
+                <label for="name" style="color: rgb(5, 5, 5)">Name</label>
               </div>
               <div class="input-field">
-                <input type="email" id="email" required style="color: white" />
-                <label for="email" style="color: white">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  style="color: rgb(0, 0, 0)"
+                />
+                <label for="email" style="color: rgb(0, 0, 0)">Email</label>
               </div>
               <div class="input-field">
                 <textarea
                   id="message"
                   class="materialize-textarea"
                   required
-                  style="color: white"
+                  style="color: rgb(0, 0, 0)"
                 ></textarea>
-                <label for="message" style="color: white">Message</label>
+                <label for="message" style="color: rgb(0, 0, 0)">Message</label>
               </div>
 
               <div class="input-field col s12 center-align">
@@ -897,6 +907,13 @@
           interval: 6000,
         });
       });
+
+      // Function to close the side navigation
+      function closeSidenav() {
+        const elem = document.querySelector(".sidenav"); //retrieves the side nav element by selecting it
+        const instance = M.Sidenav.getInstance(elem); // get a reference to an existing instance .sidenav
+        instance.close(); //close the side nav
+      }
     </script>
   </body>
 </html>
